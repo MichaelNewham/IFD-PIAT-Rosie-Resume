@@ -215,7 +215,18 @@
             { lat: 40.754991. lng: -73.984085 }
         ];
 
-        }
+        var markers = locations.map(function(location, i) {
+    
+            return new google.maps.Marker( {
+                position: location;
+                label: labels[i % labels,length]
+            });
+        });
+
+        var markerClusterer = new markerClusterer(map, markers,
+        {imagePath: "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m"});
+    }
+    
     </script>
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvbzYRwOhrV-PeIumQz4OsCKodzNV4kPA&callback=initMap"></script>
